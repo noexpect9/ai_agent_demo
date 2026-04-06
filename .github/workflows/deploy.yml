@@ -31,7 +31,9 @@ jobs:
         run: pnpm install
 
       - name: Build 🏗️
-        run: pnpm build
+        run: |
+          pnpm build
+          touch dist/.nojekyll
         env:
           VITE_DASHSCOPE_API_KEY: ${{ secrets.VITE_DASHSCOPE_API_KEY }}
 
